@@ -1,0 +1,15 @@
+
+
+
+version: "3.3"
+services:
+  tomcat:
+    build: .
+    image: chall01-tomcat
+    restart: unless-stopped
+    container_name: chall01-tomcat
+    ports:
+      - "8080:8080"
+    volumes: 
+      - /opt/flag01/:/opt/flag/:ro
+      - ./webapps:/usr/local/tomcat/webapps        
